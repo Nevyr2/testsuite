@@ -1,0 +1,39 @@
+pipe_test1:
+    type: "command_diff"
+    command: "ls | cat -e"
+
+pipe_test2:
+    type: "command_diff"
+    command: "ls | cat -e | cat -e"
+
+pipe_test3:
+    type: "command_diff"
+    command: "ls | cat -e | cat -e | cat -e"
+
+pipe_test4:
+    type: "command_diff"
+    command: "ls | cat -e | head -1"
+
+pipe_test5:
+    type: "command_diff"
+    command: "ls | cat -e | head -3 | tail -3"
+
+pipe_test6:
+    type: "command_diff"
+    command: "ls | head -1"
+
+pipe_test7:
+    type: "command_diff"
+    command: "if true; then echo toto; fi | cat -e"
+
+pipe_test8:
+    type: "command_diff"
+    command: "if false; then echo toto; fi | cat -e"
+
+pipe_test9:
+    type: "command_diff"
+    command: "if true; then echo toto; fi | cat -e | cat -e"
+
+pipe_test10:
+    type: "command_diff"
+    command: "if false; then echo toto; fi | cat -e | cat -e"

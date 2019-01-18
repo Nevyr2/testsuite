@@ -1,0 +1,57 @@
+#BUILTINS_TEST
+
+echo_test:
+    type: "command_diff"
+    command: "echo test"
+
+echo_harder_test:
+    type: "command_diff"
+    command: "echo test 1 2 3"
+
+if_ls_test:
+    type: "command_diff"
+    command: "if ls; then ls; fi"
+
+if_pwd_test:
+    type: "command_diff"
+    command: "if pwd; then pwd; fi"
+
+ls:
+    type: "command_diff"
+    command: "ls"
+
+ls_advance:
+    type: "command_diff"
+    command: "ls src"
+
+ls_advance2:
+    type: "command_diff"
+    command: "ls src/ast"
+
+variable :
+    type: "command_diff"
+    command: "a=cryteam; b=forever; echo $a$b"
+
+pipe:
+    type: "command_diff"
+    command: "echo bonjour | wc -c"
+
+advanced_pipe:
+    type: "command_diff"
+    command: "echo bonjour | cat -e | cat -e"
+
+break:
+    type: "command_diff"
+    command: "for i in 1 2 3; do echo toto; break; done"
+
+continue1:
+    type: "command_diff"
+    command: "for i in 1 2 3; do echo toto; continue; done"
+
+continue2:
+    type: "command_diff"
+    command: "for i in 1 2 3; do continue; echo toto; done"
+
+continue3:
+    type: "command_diff"
+    command: "for i in 1 2 3; do echo toto1; continue; echo toto2; done"

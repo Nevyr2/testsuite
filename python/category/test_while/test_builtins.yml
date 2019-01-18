@@ -1,0 +1,22 @@
+#WHILE_TEST
+
+while_builtins_test1:
+    type: "command_diff"
+    command: "while i in 3; do ls; done"
+
+while_builtins_test2:
+    type: "command_diff"
+    command: "while while i in 3; do ls; done"
+
+while_builtins_test3:
+    type: "command_diff"
+    command: "while i in a b; do ls; done"
+
+while_builtins_test4:
+    type: "command_diff"
+    command: "toto = 'a b c d e' while i in $toto; do echo $i; done"
+
+while_builtins_test5:
+    type: "command_diff"
+    command: "toto = '1 2 3 4 5 11 22 33' while i in $toto; if $i; then echo $i is sup 1; fi ; done"
+

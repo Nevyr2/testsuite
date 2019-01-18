@@ -1,0 +1,41 @@
+#IF_TEST
+
+if_test1:
+    type: "command_diff"
+    command: "if ls; then ls; fi"
+
+if_test2:
+    type: "command_diff"
+    command: "if pwd; then ls; fi"
+
+if_test3:
+    type: "command_diff"
+    command: "if true; then ls; fi"
+
+if_test4:
+    type: "command_diff"
+    command: "if false; then ls; fi"
+
+if_test5:
+    type: "command_diff"
+    command: "if true; then echo toto; fi"
+
+if_test6:
+    type: "command_diff"
+    command: "if ls; then echo ceci est un test; fi"
+
+if_test7:
+    type: "command_diff"
+    command: "if 1; then ls; fi"
+
+²if_test8:
+    type: "command_diff"
+    command: "if a; then ls; fi"
+
+if_test9:
+    type: "command_diff"
+    command: "if true; then echo; fi"
+
+if_test10:
+    type: "command_diff"
+    command: "if false; then echo toto; fi"

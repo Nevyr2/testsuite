@@ -1,0 +1,41 @@
+#FOR_TEST
+
+for_builtins_test1:
+    type: "command_diff"
+    command: "for i in 1; do echo toto; done"
+
+for_builtins_test2:
+    type: "command_diff"
+    command: "for i in 1 2 3 4; do echo toto; done"
+
+for_builtins_test3:
+    type: "command_diff"
+    command: "for i in 1234; do echo toto; done"
+
+for_builtins_test4:
+    type: "command_diff"
+    command: "for i in 1; do echo toto; done"
+
+for_builtins_test5:
+    type: "command_diff"
+    command: "toto = clem bidou tam ugo; for i in $toto; do echo $i; done"
+
+for_builtins_test6:
+    type: "command_diff"
+    command: "toto = 'clem bidou tam ugo'; for i in $toto; do echo $i; done"
+
+for_builtins_test7:
+    type: "command_diff"
+    command: "toto = 'clem bidou tam ugo'; for i in $toto; do echo toto; done"
+
+for_builtins_test8:
+    type: "command_diff"
+    command: "toto = 'clem bidou tam ugo'; for i in $toto; do echo toto; done"
+
+for_builtins_test9:
+    type: "command_diff"
+    command: "for i in zfgaze ds sac erg gf; do echo $i; done"
+
+for_builtins_test10:
+    type: "command_diff"
+    command: "toto = 'dfz fdsfaf dfsas'; for i in toto; do echo $toto; done"

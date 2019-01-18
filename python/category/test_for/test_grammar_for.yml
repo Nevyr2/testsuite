@@ -1,0 +1,62 @@
+#FOR_TEST
+
+
+for_grammar_test1:
+    type: "output_diff"
+    command: "for i do ls"
+    expected:
+            stderr: "Syntax Error"
+
+for_grammar_test2:
+    type: "output_diff"
+    command: "for do done"
+    expected:
+            stderr: "Syntax Error"
+
+for_grammar_test3:
+    type: "output_diff"
+    command: "for do ls done"
+    expected:
+            stderr: "Syntax Error"
+
+for_grammar_test4:
+    type: "output_diff"
+    command: "for i in 1; done"
+    expected:
+            stderr: "Syntax Error"
+
+for_grammar_test5:
+    type: "output_diff"
+    command: "for i in 1; do done"
+    expected:
+            stderr: "Syntax Error"
+
+for_grammar_test6:
+    type: "output_diff"
+    command: "do ls done"
+    expected:
+            stderr: "Syntax Error"
+
+for_grammar_test7:
+    type: "output_diff"
+    command: "for ls; done"
+    expected:
+            stderr: "Syntax Error"
+
+for_grammar_test8:
+    type: "output_diff"
+    command: "for; i; in; 1; ls"
+    expected:
+            stderr: "Syntax Error"
+
+for_grammar_test9:
+    type: "output_diff"
+    command: "do"
+    expected:
+            stderr: "Syntax Error"
+
+for_grammar_test10:
+    type: "output_diff"
+    command: "done"
+    expected:
+            stderr: "Syntax Error"

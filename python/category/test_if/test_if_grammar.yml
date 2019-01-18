@@ -1,0 +1,62 @@
+#IF_TEST
+
+if_grammar_test1:
+    type: "output_diff"
+    command: "if"
+    expected:
+            stderr: "Syntax Error"
+
+if_grammar_test2:
+    type: "output_diff"
+    command: "if ls done"
+    expected:
+            stderr: "Syntax Error"
+
+if_grammar_test3:
+    type: "output_diff"
+    command: "if do ls done fi"
+    expected:
+            stderr: "Syntax Error"
+
+if_grammar_test4:
+    type: "output_diff"
+    command: "if ls; do ls;"
+    expected:
+            stderr: "Syntax Error"
+
+if_grammar_test5:
+    type: "output_diff"
+    command: "if ls; done ls do; fi"
+    expected:
+            stderr: "Syntax Error"
+
+if_grammar_test6:
+    type: "if fi; then fi; fi"
+    command: "if"
+    expected:
+            stderr: "Syntax Error"
+
+if_grammar_test7:
+    type: "output_diff"
+    command: "if then then ls fi"
+    expected:
+            stderr: "Syntax Error"
+
+if_grammar_test8:
+    type: "output_diff"
+    command: "if fi"
+    expected:
+            stderr: "Syntax Error"
+
+if_grammar_test9:
+    type: "output_diff"
+    command: "then ls done"
+    expected:
+            stderr: "Syntax Error"
+
+if_grammar_test10:
+    type: "output_diff"
+    command: "if ls"
+    expected:
+            stderr: "Syntax Error"
+
